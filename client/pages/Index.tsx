@@ -42,16 +42,16 @@ const AppointmentCard = ({ doctor, specialty, rating, date, time }: {
   date: string;
   time: string;
 }) => (
-  <div className="bg-medical-primary rounded-2xl p-4 flex flex-col gap-4 min-w-[280px] flex-shrink-0">
-    <div className="flex items-start gap-2">
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center">
-        <span className="text-white font-semibold text-sm">{doctor[0]}</span>
+  <div className="bg-medical-primary rounded-2xl p-4 md:p-6 flex flex-col gap-4 min-w-[280px] md:min-w-0 flex-shrink-0 w-full">
+    <div className="flex items-start gap-2 md:gap-3">
+      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-blue-300 to-blue-500 flex items-center justify-center">
+        <span className="text-white font-semibold text-sm md:text-base">{doctor[0]}</span>
       </div>
       <div className="flex-1">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-white font-semibold text-sm">{doctor}</p>
-            <p className="text-blue-200 text-sm">{specialty}</p>
+            <p className="text-white font-semibold text-sm md:text-base">{doctor}</p>
+            <p className="text-blue-200 text-sm md:text-base">{specialty}</p>
           </div>
           <div className="flex items-center gap-1">
             <span className="w-1 h-1 rounded-full bg-white"></span>
@@ -60,19 +60,19 @@ const AppointmentCard = ({ doctor, specialty, rating, date, time }: {
           </div>
         </div>
         <div className="flex items-center gap-1 mt-1">
-          <span className="text-white text-sm">{rating}</span>
-          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+          <span className="text-white text-sm md:text-base">{rating}</span>
+          <Star className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
         </div>
       </div>
     </div>
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-4 md:gap-6">
       <div className="flex items-center gap-2">
-        <Calendar className="w-[18px] h-[18px] text-blue-200" />
-        <span className="text-white text-sm font-semibold">{date}</span>
+        <Calendar className="w-[18px] h-[18px] md:w-5 md:h-5 text-blue-200" />
+        <span className="text-white text-sm md:text-base font-semibold">{date}</span>
       </div>
       <div className="flex items-center gap-2">
-        <Clock className="w-[18px] h-[18px] text-blue-200" />
-        <span className="text-white text-sm font-semibold">{time}</span>
+        <Clock className="w-[18px] h-[18px] md:w-5 md:h-5 text-blue-200" />
+        <span className="text-white text-sm md:text-base font-semibold">{time}</span>
       </div>
     </div>
   </div>
