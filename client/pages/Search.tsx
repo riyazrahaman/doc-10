@@ -249,12 +249,12 @@ export default function SearchPage() {
 
   // Filter logic would go here - for now showing all content
   const filteredDoctors = [
-    { name: "Jennifer Miller", specialty: "Pediatrician", hospital: "Mercy Hospital", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: false },
-    { name: "Robert Johnson", specialty: "Neurologist", hospital: "ABC hospital", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: true },
-    { name: "Laura White", specialty: "Dentist", hospital: "Cedar Dental care", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: false },
-    { name: "Brian Clark", specialty: "Psychiatrist", hospital: "ABC hospital", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: false },
-  ].filter(doctor => 
-    searchQuery === '' || 
+    { id: "1", name: "Jennifer Miller", specialty: "Pediatrician", hospital: "Mercy Hospital", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: false },
+    { id: "2", name: "Robert Johnson", specialty: "Neurologist", hospital: "ABC hospital", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: true },
+    { id: "3", name: "Laura White", specialty: "Dentist", hospital: "Cedar Dental care", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: false },
+    { id: "4", name: "Brian Clark", specialty: "Psychiatrist", hospital: "ABC hospital", rating: "4.8", hours: "10:30am - 5:30pm", isFavorite: false },
+  ].filter(doctor =>
+    searchQuery === '' ||
     doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     doctor.specialty.toLowerCase().includes(searchQuery.toLowerCase()) ||
     doctor.hospital.toLowerCase().includes(searchQuery.toLowerCase())
