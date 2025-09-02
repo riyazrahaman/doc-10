@@ -324,9 +324,10 @@ export default function SearchPage() {
             
             {filteredDoctors.length > 0 ? (
               <div className="space-y-3 md:space-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-4 lg:space-y-0">
-                {filteredDoctors.map((doctor, index) => (
+                {filteredDoctors.map((doctor) => (
                   <DoctorCard
-                    key={index}
+                    key={doctor.id}
+                    id={doctor.id}
                     name={doctor.name}
                     specialty={doctor.specialty}
                     hospital={doctor.hospital}
