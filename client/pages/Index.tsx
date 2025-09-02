@@ -30,7 +30,9 @@ const Header = () => (
       </div>
     </div>
     <div className="flex items-center gap-4 md:gap-6">
-      <Search className="w-6 h-6 md:w-7 md:h-7 text-medical-text-dark cursor-pointer hover:text-medical-primary transition-colors" />
+      <Link to="/search" className="p-2 -m-2 rounded-full hover:bg-gray-100 transition-colors">
+        <Search className="w-6 h-6 md:w-7 md:h-7 text-medical-text-dark hover:text-medical-primary transition-colors" />
+      </Link>
       <Heart className="w-6 h-6 md:w-7 md:h-7 text-medical-text-dark cursor-pointer hover:text-medical-favorite transition-colors" />
     </div>
   </div>
