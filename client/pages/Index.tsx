@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, Heart, Calendar, Clock, Star, Home, BookOpen, MessageCircle, User } from 'lucide-react';
 
 const StatusBar = () => (
