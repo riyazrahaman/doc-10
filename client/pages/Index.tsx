@@ -127,26 +127,35 @@ const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
   </div>
 );
 
-const BottomNav = () => (
-  <div className="bg-medical-primary px-6 md:px-8 lg:px-12 py-4 md:py-6 flex items-center justify-between fixed bottom-0 left-0 right-0 max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
-    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-      <Home className="w-6 h-6 md:w-7 md:h-7 text-white" />
-      <span className="text-white text-xs md:text-sm font-semibold">Home</span>
+const BottomNav = () => {
+  const location = useLocation();
+
+  const NavItem = ({ to, icon: Icon, label, isActive }: {
+    to: string;
+    icon: React.ComponentType<any>;
+    label: string;
+    isActive: boolean;
+  }) => (
+    <Link
+      to={to}
+      className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
+    >
+      <Icon className={`w-6 h-6 md:w-7 md:h-7 ${isActive ? 'text-white' : 'text-blue-200'}`} />
+      <span className={`text-xs md:text-sm ${isActive ? 'text-white font-semibold' : 'text-blue-200'}`}>
+        {label}
+      </span>
+    </Link>
+  );
+
+  return (
+    <div className="bg-medical-primary px-6 md:px-8 lg:px-12 py-4 md:py-6 flex items-center justify-between fixed bottom-0 left-0 right-0 max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+      <NavItem to="/" icon={Home} label="Home" isActive={location.pathname === '/'} />
+      <NavItem to="/bookings" icon={BookOpen} label="Bookings" isActive={location.pathname === '/bookings'} />
+      <NavItem to="/chat" icon={MessageCircle} label="Chat" isActive={location.pathname === '/chat'} />
+      <NavItem to="/profile" icon={User} label="Profile" isActive={location.pathname === '/profile'} />
     </div>
-    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-      <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-blue-200" />
-      <span className="text-blue-200 text-xs md:text-sm">Bookings</span>
-    </div>
-    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-      <MessageCircle className="w-6 h-6 md:w-7 md:h-7 text-blue-200" />
-      <span className="text-blue-200 text-xs md:text-sm">Chat</span>
-    </div>
-    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-      <User className="w-6 h-6 md:w-7 md:h-7 text-blue-200" />
-      <span className="text-blue-200 text-xs md:text-sm">Profile</span>
-    </div>
-  </div>
-);
+  );
+};
 
 // Medical icons as SVG components
 const HeartIcon = () => (
