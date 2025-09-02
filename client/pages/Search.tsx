@@ -89,7 +89,8 @@ const CategoryCard = ({ icon, label }: { icon: React.ReactNode; label: string })
   </div>
 );
 
-const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
+const DoctorCard = ({ id, name, specialty, hospital, rating, hours, isFavorite }: {
+  id: string;
   name: string;
   specialty: string;
   hospital: string;
@@ -97,35 +98,45 @@ const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
   hours: string;
   isFavorite: boolean;
 }) => (
-  <div className="bg-medical-bg-light border border-[#F4F4F6] rounded-2xl p-4 md:p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow">
-    <div className="flex items-start gap-2 md:gap-3">
-      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
-        <span className="text-white font-semibold text-sm md:text-base">{name[0]}</span>
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-medical-text-dark font-semibold text-sm md:text-base">{name}</p>
-            <p className="text-medical-text-light text-sm md:text-base">{specialty} | {hospital}</p>
-          </div>
-          <Heart className={`w-5 h-5 md:w-6 md:h-6 cursor-pointer hover:scale-110 transition-transform ${isFavorite ? 'fill-medical-favorite text-medical-favorite' : 'text-medical-favorite'}`} />
+  <Link to={`/doctor/${id}`} className="block bg-medical-bg-light border border-[#F4F4F6] rounded-2xl p-4 md:p-6 hover:shadow-lg transition-shadow cursor-pointer">
+    <div className="flex flex-col gap-4">
+      <div className="flex items-start gap-2 md:gap-3">
+        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
+          <span className="text-white font-semibold text-sm md:text-base">{name[0]}</span>
         </div>
-        <div className="flex items-center justify-between mt-2">
-          <div className="flex items-center gap-1">
-            <span className="text-medical-text-dark text-sm md:text-base">{rating}</span>
-            <Star className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
+        <div className="flex-1">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-medical-text-dark font-semibold text-sm md:text-base">{name}</p>
+              <p className="text-medical-text-light text-sm md:text-base">{specialty} | {hospital}</p>
+            </div>
+            <button
+              onClick={(e) => e.preventDefault()}
+              className="p-1"
+            >
+              <Heart className={`w-5 h-5 md:w-6 md:h-6 cursor-pointer hover:scale-110 transition-transform ${isFavorite ? 'fill-medical-favorite text-medical-favorite' : 'text-medical-favorite'}`} />
+            </button>
           </div>
-          <div className="flex items-center gap-2">
-            <Clock className="w-[18px] h-[18px] md:w-5 md:h-5 text-medical-text-medium" />
-            <span className="text-medical-text-dark text-sm md:text-base">{hours}</span>
+          <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center gap-1">
+              <span className="text-medical-text-dark text-sm md:text-base">{rating}</span>
+              <Star className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-[18px] h-[18px] md:w-5 md:h-5 text-medical-text-medium" />
+              <span className="text-medical-text-dark text-sm md:text-base">{hours}</span>
+            </div>
           </div>
         </div>
       </div>
+      <button
+        onClick={(e) => e.preventDefault()}
+        className="bg-medical-primary-light text-medical-primary font-semibold text-sm md:text-base py-3 md:py-4 px-4 md:px-6 rounded-full hover:bg-medical-primary hover:text-white transition-colors"
+      >
+        Book Appointment
+      </button>
     </div>
-    <button className="bg-medical-primary-light text-medical-primary font-semibold text-sm md:text-base py-3 md:py-4 px-4 md:px-6 rounded-full hover:bg-medical-primary hover:text-white transition-colors">
-      Book Appointment
-    </button>
-  </div>
+  </Link>
 );
 
 const BottomNav = () => {
