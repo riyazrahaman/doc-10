@@ -79,11 +79,11 @@ const AppointmentCard = ({ doctor, specialty, rating, date, time }: {
 );
 
 const CategoryCard = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-  <div className="flex flex-col items-center gap-1 p-3 rounded-2xl bg-medical-bg min-w-[72px]">
-    <div className="w-7 h-7 flex items-center justify-center text-medical-text-dark">
+  <div className="flex flex-col items-center gap-1 p-2 md:p-3 lg:p-4 rounded-2xl bg-medical-bg min-w-[64px] md:min-w-[80px] lg:min-w-[96px] hover:bg-medical-primary-lighter transition-colors cursor-pointer">
+    <div className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 flex items-center justify-center text-medical-text-dark">
       {icon}
     </div>
-    <span className="text-xs font-semibold text-medical-text-medium text-center">{label}</span>
+    <span className="text-xs md:text-sm font-semibold text-medical-text-medium text-center">{label}</span>
   </div>
 );
 
@@ -95,32 +95,32 @@ const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
   hours: string;
   isFavorite: boolean;
 }) => (
-  <div className="bg-medical-bg-light border border-[#F4F4F6] rounded-2xl p-4 flex flex-col gap-4">
-    <div className="flex items-start gap-2">
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
-        <span className="text-white font-semibold text-sm">{name[0]}</span>
+  <div className="bg-medical-bg-light border border-[#F4F4F6] rounded-2xl p-4 md:p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow">
+    <div className="flex items-start gap-2 md:gap-3">
+      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center">
+        <span className="text-white font-semibold text-sm md:text-base">{name[0]}</span>
       </div>
       <div className="flex-1">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-medical-text-dark font-semibold text-sm">{name}</p>
-            <p className="text-medical-text-light text-sm">{specialty} | {hospital}</p>
+            <p className="text-medical-text-dark font-semibold text-sm md:text-base">{name}</p>
+            <p className="text-medical-text-light text-sm md:text-base">{specialty} | {hospital}</p>
           </div>
-          <Heart className={`w-5 h-5 ${isFavorite ? 'fill-medical-favorite text-medical-favorite' : 'text-medical-favorite'}`} />
+          <Heart className={`w-5 h-5 md:w-6 md:h-6 cursor-pointer hover:scale-110 transition-transform ${isFavorite ? 'fill-medical-favorite text-medical-favorite' : 'text-medical-favorite'}`} />
         </div>
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center gap-1">
-            <span className="text-medical-text-dark text-sm">{rating}</span>
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            <span className="text-medical-text-dark text-sm md:text-base">{rating}</span>
+            <Star className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="w-[18px] h-[18px] text-medical-text-medium" />
-            <span className="text-medical-text-dark text-sm">{hours}</span>
+            <Clock className="w-[18px] h-[18px] md:w-5 md:h-5 text-medical-text-medium" />
+            <span className="text-medical-text-dark text-sm md:text-base">{hours}</span>
           </div>
         </div>
       </div>
     </div>
-    <button className="bg-medical-primary-light text-medical-primary font-semibold text-sm py-3 px-4 rounded-full">
+    <button className="bg-medical-primary-light text-medical-primary font-semibold text-sm md:text-base py-3 md:py-4 px-4 md:px-6 rounded-full hover:bg-medical-primary hover:text-white transition-colors">
       Book Appointment
     </button>
   </div>
