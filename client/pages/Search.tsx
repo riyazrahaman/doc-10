@@ -290,7 +290,12 @@ export default function SearchPage() {
               <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-8 gap-2 md:gap-3 lg:gap-4">
                 <CategoryCard icon={<HeartIcon />} label="Heart" />
                 <CategoryCard icon={<ToothIcon />} label="Dental" />
-                {/* Add other category icons here */}
+                <CategoryCard icon={<KidneyIcon />} label="Kidney" />
+                <CategoryCard icon={<StomachIcon />} label="Stomach" />
+                <CategoryCard icon={<LungIcon />} label="Lung" />
+                <CategoryCard icon={<BrainIcon />} label="Brain" />
+                <CategoryCard icon={<MentalIcon />} label="Mental" />
+                <CategoryCard icon={<LiverIcon />} label="Liver" />
               </div>
             </div>
           </>
