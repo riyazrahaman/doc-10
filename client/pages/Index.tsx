@@ -224,17 +224,17 @@ const LiverIcon = () => (
 
 export default function HomePage() {
   return (
-    <div className="max-w-md mx-auto bg-white min-h-screen flex flex-col">
+    <div className="max-w-md mx-auto bg-white min-h-screen flex flex-col relative sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
       <StatusBar />
-      <div className="flex-1 pb-16">
+      <div className="flex-1 pb-16 md:pb-20 lg:pb-24">
         <Header />
-        
+
         {/* Upcoming Appointments */}
-        <div className="px-6 py-10">
-          <h2 className="text-lg font-bold text-medical-text-dark mb-6">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-6 md:py-8 lg:py-10">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-medical-text-dark mb-4 md:mb-6">
             Upcoming Appointments
           </h2>
-          <div className="flex gap-4 overflow-x-auto pb-2">
+          <div className="flex gap-3 md:gap-4 lg:gap-6 overflow-x-auto pb-2 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:overflow-visible">
             <AppointmentCard
               doctor="Jason Smith"
               specialty="Dentist"
@@ -253,12 +253,12 @@ export default function HomePage() {
         </div>
 
         {/* Categories */}
-        <div className="px-6 py-5">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-medical-text-dark">Categories</h2>
-            <span className="text-base text-medical-primary">See all</span>
+        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 md:py-6 lg:py-8">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-medical-text-dark">Categories</h2>
+            <span className="text-sm md:text-base text-medical-primary hover:underline cursor-pointer">See all</span>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-8 gap-2 md:gap-3 lg:gap-4">
             <CategoryCard icon={<HeartIcon />} label="Heart" />
             <CategoryCard icon={<ToothIcon />} label="Dental" />
             <CategoryCard icon={<KidneyIcon />} label="Kidney" />
@@ -271,12 +271,12 @@ export default function HomePage() {
         </div>
 
         {/* Find Doctors */}
-        <div className="px-6 py-5">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-medical-text-dark">Find Doctors</h2>
-            <span className="text-base text-medical-primary">See all</span>
+        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 md:py-6 lg:py-8">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-medical-text-dark">Find Doctors</h2>
+            <span className="text-sm md:text-base text-medical-primary hover:underline cursor-pointer">See all</span>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-4 lg:space-y-0">
             <DoctorCard
               name="Jennifer Miller"
               specialty="Pediatrician"
