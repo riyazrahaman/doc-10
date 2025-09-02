@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        medical: {
+          primary: "hsl(var(--medical-primary))",
+          "primary-light": "hsl(var(--medical-primary-light))",
+          "primary-lighter": "hsl(var(--medical-primary-lighter))",
+          "text-dark": "hsl(var(--medical-text-dark))",
+          "text-medium": "hsl(var(--medical-text-medium))",
+          "text-light": "hsl(var(--medical-text-light))",
+          bg: "hsl(var(--medical-bg))",
+          "bg-light": "hsl(var(--medical-bg-light))",
+          favorite: "hsl(var(--medical-favorite))",
+          star: "hsl(var(--medical-star))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
