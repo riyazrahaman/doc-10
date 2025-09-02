@@ -18,19 +18,19 @@ const StatusBar = () => (
 );
 
 const Header = () => (
-  <div className="flex items-center justify-between px-6 py-2">
-    <div className="flex items-center gap-2">
-      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-        <span className="text-white font-semibold text-lg">AS</span>
+  <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-2 md:py-4">
+    <div className="flex items-center gap-2 md:gap-3">
+      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+        <span className="text-white font-semibold text-lg md:text-xl">AS</span>
       </div>
       <div>
-        <p className="text-sm text-medical-text-medium">Welcome Back</p>
-        <p className="text-base font-medium text-medical-text-dark">Andrew Smith</p>
+        <p className="text-sm md:text-base text-medical-text-medium">Welcome Back</p>
+        <p className="text-base md:text-lg font-medium text-medical-text-dark">Andrew Smith</p>
       </div>
     </div>
-    <div className="flex items-center gap-6">
-      <Search className="w-7 h-7 text-medical-text-dark" />
-      <Heart className="w-6 h-6 text-medical-text-dark" />
+    <div className="flex items-center gap-4 md:gap-6">
+      <Search className="w-6 h-6 md:w-7 md:h-7 text-medical-text-dark cursor-pointer hover:text-medical-primary transition-colors" />
+      <Heart className="w-6 h-6 md:w-7 md:h-7 text-medical-text-dark cursor-pointer hover:text-medical-favorite transition-colors" />
     </div>
   </div>
 );
@@ -127,22 +127,22 @@ const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
 );
 
 const BottomNav = () => (
-  <div className="bg-medical-primary px-8 py-4 flex items-center justify-between">
-    <div className="flex flex-col items-center gap-1">
-      <Home className="w-6 h-6 text-white" />
-      <span className="text-white text-xs font-semibold">Home</span>
+  <div className="bg-medical-primary px-6 md:px-8 lg:px-12 py-4 md:py-6 flex items-center justify-between fixed bottom-0 left-0 right-0 max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+      <Home className="w-6 h-6 md:w-7 md:h-7 text-white" />
+      <span className="text-white text-xs md:text-sm font-semibold">Home</span>
     </div>
-    <div className="flex flex-col items-center gap-1">
-      <BookOpen className="w-6 h-6 text-blue-200" />
-      <span className="text-blue-200 text-xs">Bookings</span>
+    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+      <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-blue-200" />
+      <span className="text-blue-200 text-xs md:text-sm">Bookings</span>
     </div>
-    <div className="flex flex-col items-center gap-1">
-      <MessageCircle className="w-6 h-6 text-blue-200" />
-      <span className="text-blue-200 text-xs">Chat</span>
+    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+      <MessageCircle className="w-6 h-6 md:w-7 md:h-7 text-blue-200" />
+      <span className="text-blue-200 text-xs md:text-sm">Chat</span>
     </div>
-    <div className="flex flex-col items-center gap-1">
-      <User className="w-6 h-6 text-blue-200" />
-      <span className="text-blue-200 text-xs">Profile</span>
+    <div className="flex flex-col items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+      <User className="w-6 h-6 md:w-7 md:h-7 text-blue-200" />
+      <span className="text-blue-200 text-xs md:text-sm">Profile</span>
     </div>
   </div>
 );
