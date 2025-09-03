@@ -2,22 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, Heart, Calendar, Clock, Star, Home, BookOpen, MessageCircle, User, ArrowLeft } from 'lucide-react';
 
-const StatusBar = () => (
-  <div className="flex items-center justify-between px-6 py-4 bg-white">
-    <div className="text-[17px] font-medium text-[#1F2E3D]">9:41</div>
-    <div className="flex items-center gap-1">
-      <svg width="17" height="12" viewBox="0 0 17 12" fill="none" className="fill-[#1F2E3D]">
-        <path fillRule="evenodd" clipRule="evenodd" d="M8.43412 2.58753C10.8814 2.58764 13.2351 3.55505 15.0088 5.28982C15.1424 5.42375 15.3559 5.42206 15.4874 5.28603L16.7641 3.96045C16.8307 3.89146 16.8679 3.798 16.8673 3.70076C16.8668 3.60353 16.8286 3.51052 16.7612 3.44234C12.1059 -1.14745 4.76162 -1.14745 0.106327 3.44234C0.0388914 3.51047 0.000629527 3.60345 7.69876e-06 3.70069C-0.000614129 3.79792 0.0364554 3.89141 0.103013 3.96045L1.38011 5.28603C1.51156 5.42226 1.72521 5.42396 1.85869 5.28982C3.63258 3.55494 5.98657 2.58752 8.43412 2.58753ZM8.46934 6.58938C9.81397 6.58929 11.1106 7.10346 12.1073 8.03199C12.2421 8.16376 12.4545 8.16091 12.5859 8.02555L13.8612 6.69997C13.9283 6.63044 13.9656 6.53611 13.9646 6.4381C13.9637 6.34008 13.9245 6.24656 13.856 6.17844C10.8208 3.27385 6.12043 3.27385 3.08522 6.17844C3.01666 6.24656 2.97755 6.34013 2.97665 6.43817C2.97575 6.53622 3.01314 6.63054 3.08044 6.69997L4.35532 8.02555C4.48674 8.16091 4.6991 8.16376 4.83391 8.03199C5.82997 7.10408 7.12559 6.58995 8.46934 6.58938ZM11.0625 9.17672C11.0645 9.27501 11.0269 9.36977 10.9587 9.43863L8.75277 11.7289C8.6881 11.7962 8.59994 11.834 8.50795 11.834C8.41596 11.834 8.3278 11.7962 8.26314 11.7289L6.05685 9.43863C5.98869 9.36972 5.9512 9.27492 5.95322 9.17663C5.95524 9.07834 5.9966 8.98527 6.06752 8.91938C7.47631 7.69354 9.5396 7.69354 10.9484 8.91938C11.0193 8.98532 11.0605 9.07843 11.0625 9.17672Z" fill="#1F2E3D"/>
-      </svg>
-      <svg width="29" height="13" viewBox="0 0 29 13" fill="none">
-        <path opacity="0.35" d="M4.81268 0.5H21.8127C23.7457 0.5 25.3127 2.067 25.3127 4V9C25.3127 10.933 23.7457 12.5 21.8127 12.5H4.81268C2.87969 12.5 1.31268 10.933 1.31268 9V4C1.31268 2.067 2.87969 0.5 4.81268 0.5Z" stroke="#1F2E3D"/>
-        <path opacity="0.4" d="M26.8127 5V9.22034C27.6617 8.86291 28.2139 8.0314 28.2139 7.11017C28.2139 6.18894 27.6617 5.35744 26.8127 5Z" fill="#1F2E3D"/>
-        <path d="M2.81268 4C2.81268 2.89543 3.70811 2 4.81268 2H21.8127C22.9173 2 23.8127 2.89543 23.8127 4V9C23.8127 10.1046 22.9173 11 21.8127 11H4.81268C3.70811 11 2.81268 10.1046 2.81268 9V4Z" fill="#1F2E3D"/>
-      </svg>
-    </div>
-  </div>
-);
-
 const SearchHeader = ({ searchQuery, setSearchQuery }: { searchQuery: string; setSearchQuery: (query: string) => void }) => (
   <div className="bg-white px-6 py-4 flex items-center gap-4 shadow-sm">
     <Link to="/" className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors">
@@ -262,7 +246,6 @@ export default function SearchPage() {
 
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen flex flex-col relative sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
-      <StatusBar />
       <SearchHeader searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       
       <div className="flex-1 pb-16 md:pb-20 lg:pb-24 overflow-y-auto">
