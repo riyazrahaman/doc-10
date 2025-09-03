@@ -90,7 +90,8 @@ const CategoryCard = ({ icon, label }: { icon: React.ReactNode; label: string })
   </div>
 );
 
-const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
+const DoctorCard = ({ id, name, specialty, hospital, rating, hours, isFavorite }: {
+  id: string;
   name: string;
   specialty: string;
   hospital: string;
@@ -123,9 +124,9 @@ const DoctorCard = ({ name, specialty, hospital, rating, hours, isFavorite }: {
         </div>
       </div>
     </div>
-    <button className="bg-medical-primary-light text-medical-primary font-semibold text-sm md:text-base py-3 md:py-4 px-4 md:px-6 rounded-full hover:bg-medical-primary hover:text-white transition-colors">
+    <Link to={`/doctor/${id}`} className="bg-medical-primary-light text-medical-primary font-semibold text-sm md:text-base py-3 md:py-4 px-4 md:px-6 rounded-full hover:bg-medical-primary hover:text-white transition-colors text-center">
       Book Appointment
-    </button>
+    </Link>
   </div>
 );
 
@@ -290,6 +291,7 @@ export default function HomePage() {
           </div>
           <div className="space-y-3 md:space-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-4 lg:space-y-0">
             <DoctorCard
+              id="1"
               name="Jennifer Miller"
               specialty="Pediatrician"
               hospital="Mercy Hospital"
@@ -298,6 +300,7 @@ export default function HomePage() {
               isFavorite={false}
             />
             <DoctorCard
+              id="2"
               name="Robert Johnson"
               specialty="Neurologist"
               hospital="ABC hospital"
@@ -306,6 +309,7 @@ export default function HomePage() {
               isFavorite={true}
             />
             <DoctorCard
+              id="3"
               name="Laura White"
               specialty="Dentist"
               hospital="Cedar Dental care"
@@ -314,6 +318,7 @@ export default function HomePage() {
               isFavorite={false}
             />
             <DoctorCard
+              id="4"
               name="Brian Clark"
               specialty="Psychiatrist"
               hospital="ABC hospital"
