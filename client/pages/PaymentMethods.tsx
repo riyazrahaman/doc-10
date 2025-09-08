@@ -2,39 +2,46 @@ import React, { useState } from "react";
 import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeft, Search, Heart, Plus } from "lucide-react";
 
-const HeaderSection = () => (
-  <div className="flex items-center justify-between px-4 sm:px-6 py-4">
-    <div className="flex items-center gap-3 sm:gap-4">
-      <Link to="/appointment/1" className="flex items-center justify-center">
-        <ArrowLeft className="w-6 h-6 text-[#33384B]" strokeWidth={2} />
-      </Link>
-      <h1 className="text-[#33384B] font-bold text-base sm:text-lg font-['Open_Sans']">
-        Payment Methods
-      </h1>
-    </div>
-    <div className="flex items-center gap-4 sm:gap-6">
-      <div className="w-6 h-6 relative">
-        <div className="w-3 h-3 transform -rotate-45 border-2 border-[#33384B] rounded-sm absolute top-0.5 left-0.5"></div>
-        <svg
-          width="6"
-          height="6"
-          viewBox="0 0 8 8"
-          fill="none"
-          className="absolute bottom-0 right-0"
+const HeaderSection = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="flex items-center justify-between px-4 sm:px-6 py-4">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center justify-center"
         >
-          <path
-            d="M1 1L7 7"
-            stroke="#33384B"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+          <ArrowLeft className="w-6 h-6 text-[#33384B]" strokeWidth={2} />
+        </button>
+        <h1 className="text-[#33384B] font-bold text-base sm:text-lg font-['Open_Sans']">
+          Payment Methods
+        </h1>
       </div>
-      <Heart className="w-6 h-6 text-[#33384B]" strokeWidth={2} />
+      <div className="flex items-center gap-4 sm:gap-6">
+        <div className="w-6 h-6 relative">
+          <div className="w-3 h-3 transform -rotate-45 border-2 border-[#33384B] rounded-sm absolute top-0.5 left-0.5"></div>
+          <svg
+            width="6"
+            height="6"
+            viewBox="0 0 8 8"
+            fill="none"
+            className="absolute bottom-0 right-0"
+          >
+            <path
+              d="M1 1L7 7"
+              stroke="#33384B"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <Heart className="w-6 h-6 text-[#33384B]" strokeWidth={2} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const PaymentMethodCard = ({ 
   id, 
