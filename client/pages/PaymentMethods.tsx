@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeft, Search, Heart, Plus } from "lucide-react";
 
 const HeaderSection = () => (
@@ -152,6 +152,7 @@ const PaypalIcon = () => (
 
 export default function PaymentMethodsPage() {
   const [selectedMethod, setSelectedMethod] = useState<string>("visa");
+  const navigate = useNavigate();
 
   const paymentMethods = [
     {
