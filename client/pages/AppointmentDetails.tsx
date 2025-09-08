@@ -138,9 +138,12 @@ const MessageSection = () => {
 
 const NextButton = () => (
   <div className="px-4 sm:px-6 pb-6 sm:pb-8">
-    <button className="w-full bg-[#2E6FF3] text-white font-bold text-base sm:text-lg font-['Open_Sans'] py-4 px-6 rounded-[32px] hover:bg-blue-600 transition-colors">
+    <Link
+      to="/payment"
+      className="w-full bg-[#2E6FF3] text-white font-bold text-base sm:text-lg font-['Open_Sans'] py-4 px-6 rounded-[32px] hover:bg-blue-600 transition-colors flex items-center justify-center"
+    >
       Next
-    </button>
+    </Link>
   </div>
 );
 
