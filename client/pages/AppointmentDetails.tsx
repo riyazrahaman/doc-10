@@ -5,7 +5,10 @@ import { ArrowLeft, Search, Heart, Star } from "lucide-react";
 const HeaderSection = ({ doctorId }: { doctorId: string }) => (
   <div className="flex items-center justify-between px-4 sm:px-6 py-4">
     <div className="flex items-center gap-3 sm:gap-4">
-      <Link to={`/doctor/${doctorId}`} className="flex items-center justify-center">
+      <Link
+        to={`/doctor/${doctorId}`}
+        className="flex items-center justify-center"
+      >
         <ArrowLeft className="w-6 h-6 text-[#33384B]" strokeWidth={2} />
       </Link>
       <h1 className="text-[#33384B] font-bold text-base sm:text-lg font-['Open_Sans']">
@@ -164,7 +167,7 @@ export default function AppointmentDetailsPage() {
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen flex flex-col relative sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
       <HeaderSection doctorId={doctor.id} />
-      
+
       <div className="flex-1 flex flex-col gap-8 pt-8">
         <DoctorCard doctor={doctor} />
         <ScheduleSection />
